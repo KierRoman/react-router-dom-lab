@@ -1,10 +1,13 @@
 import { useState } from "react"
+import { useNavigate } from "react-router"
 
 const LetterForm = (props) => {
     const [mailboxId, setMailboxId] = useState('')
     const [recipient, setRecipient] = useState('')
     const [message, setMessage] = useState('')
 
+    const navigate = useNavigate()
+    
     const handleSubmit = (e) => {
         e.preventDefault()
         const newLetter = {mailboxId: Number(mailboxId), recipient, message}
@@ -12,6 +15,8 @@ const LetterForm = (props) => {
         setMailboxId('')
         setRecipient('')
         setMessage('')
+
+        navigate(`/mailboxes/${mailboxId}`)
     }
     return (
         <form onSubmit={handleSubmit}>

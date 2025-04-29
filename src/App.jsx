@@ -37,7 +37,7 @@ const App = () => {
     <Route path='/mailboxes/:mailboxId' element={<MailboxDetails mailboxes={mailboxes} letters={letters} />}/>
     <Route path='*' element={<h2>Whoops nothing here!</h2>}/>
    </Routes>
-    </>
+    </> 
   )
 }
 
